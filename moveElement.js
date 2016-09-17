@@ -10,6 +10,12 @@ function moveElement(elementId, final_x, final_y, interval) {
     if (elem.movement){
         clearTimeout(elem.movement);
     }
+    if (!elem.style.left){
+        elem.style.left = "0px";
+    }
+    if (!elem.style.top){
+        elem.style.top = "0px";
+    }
     if (xpos < final_x){
         var dist = Math.ceil((final_x - xpos)/10);
         xpos = xpos + dist;
